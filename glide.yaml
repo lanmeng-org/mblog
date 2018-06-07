@@ -1,0 +1,8 @@
+package: MBlog
+import:
+- package: github.com/BurntSushi/toml
+  version: v0.3.0
+- package: github.com/go-sql-driver/mysql
+  version: v1.4.0
+- package: github.com/elithrar/simple-scrypt
+  version: v1.3.0

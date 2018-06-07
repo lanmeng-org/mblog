@@ -2,6 +2,7 @@ package util
 
 import (
 	"github.com/BurntSushi/toml"
+	"fmt"
 )
 
 type configBlog struct {
@@ -16,6 +17,11 @@ type configDB struct {
 	User string
 	Password string
 	DBName string
+}
+
+func (db *configDB) GenDsn() string {
+	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=true",
+		db.User, db.Password, db.Host, db.Port, db.DBName)
 }
 
 type configWeb struct {

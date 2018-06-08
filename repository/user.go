@@ -3,6 +3,7 @@ package repository
 import (
 	"MBlog/model"
 	"MBlog/util"
+
 	"errors"
 )
 
@@ -12,7 +13,7 @@ func Login(name string, password string) (*model.User, error) {
 		return nil, err
 	}
 
-	if util.PwdIsRight(password, user.Password) {
+	if util.CheckPwd([]byte(user.Password), []byte(password)) {
 		return user, nil
 	}
 

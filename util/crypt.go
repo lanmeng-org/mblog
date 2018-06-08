@@ -1,15 +1,15 @@
 package util
 
 import (
-	"github.com/elithrar/simple-scrypt"
+	"golang.org/x/crypto/bcrypt"
 )
 
 func EncryptPwd(password []byte) ([]byte, error) {
-	return scrypt.GenerateFromPassword(password, scrypt.DefaultParams)
+	return bcrypt.GenerateFromPassword(password, bcrypt.DefaultCost)
 }
 
-func CheckPwd(password, hash []byte) bool {
-	err := scrypt.CompareHashAndPassword(hash, password)
+func CheckPwd(hash, password[]byte) bool {
+	err := bcrypt.CompareHashAndPassword(hash, password)
 
 	return err == nil
 }

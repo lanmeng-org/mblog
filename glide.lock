@@ -1,0 +1,42 @@
+hash: 8984d64fbd614ce736d79ce2d8e0d9aea4e70ce674cf0c3e7bfc25d4d9c100c2
+updated: 2018-06-08T13:23:15.4942925+08:00
+imports:
+- name: github.com/BurntSushi/toml
+  version: b26d9c308763d68093482582cea63d69be07a0f0
+- name: github.com/gin-contrib/sse
+  version: 22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae
+- name: github.com/gin-gonic/gin
+  version: d459835d2b077e44f7c9b453505ee29881d5d12d
+  subpackages:
+  - binding
+  - render
+- name: github.com/go-sql-driver/mysql
+  version: d523deb1b23d913de5bdada721a6071e71283618
+- name: github.com/golang/protobuf
+  version: 05f48f4eaf0e05663b562bab533cdd472238ce29
+  subpackages:
+  - proto
+- name: github.com/mattn/go-isatty
+  version: 6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c
+- name: github.com/ugorji/go
+  version: f3cacc17c85ecb7f1b6a9e373ee85d1480919868
+  subpackages:
+  - codec
+- name: golang.org/x/crypto
+  version: b47b1587369238182299fe4dad77d05b8b461e06
+  subpackages:
+  - bcrypt
+  - blowfish
+- name: golang.org/x/sys
+  version: 9527bec2660bd847c050fda93a0f0c6dee0800bb
+  subpackages:
+  - unix
+- name: google.golang.org/appengine
+  version: b1f26356af11148e710935ed1ac8a7f5702c7612
+  subpackages:
+  - cloudsql
+- name: gopkg.in/go-playground/validator.v8
+  version: 5f1438d3fca68893a817e4a66806cea46a9e4ebf
+- name: gopkg.in/yaml.v2
+  version: 5420a8b6744d3b0345ab293f6fcba19c978f1183
+testImports: []

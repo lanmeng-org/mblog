@@ -1,0 +1,15 @@
+environment: "development"  # development production
+
+db:
+  type: "mysql"  # 支持mysql
+  host: "127.0.0.1"
+  port: 3306
+  user: "root"
+  password: "password"
+  database: "name"
+
+web:
+  listen: ":8080"
+  template:
+    file_suffix: ".html"
+    paths: ["template/*", "template/public/*", "template/widget/*"]

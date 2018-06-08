@@ -106,5 +106,6 @@ Session.vim
 *.exe
 /logs/*
 !/logs
-/config/*.toml
+/config/*.yaml
+/config/*.yml
 !/config

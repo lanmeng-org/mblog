@@ -1,43 +1,50 @@
 package util
 
 import (
-	"github.com/BurntSushi/toml"
 	"fmt"
+	"gopkg.in/yaml.v2"
+	"io/ioutil"
 )
 
 type configBlog struct {
-	DB *configDB `toml:"db"`
-	Web *configWeb
+	Environment string
+	DB          *configDB
+	Web         *configWeb
 }
 
 type configDB struct {
-	Type string
-	Host string
-	Port int
-	User string
+	Type     string
+	Host     string
+	Port     int
+	User     string
 	Password string
-	DBName string
+	Database   string
 }
 
 func (db *configDB) GenDsn() string {
 	return fmt.Sprintf("%s:%s@tcp(%s:%d)/%s?charset=utf8&parseTime=true",
-		db.User, db.Password, db.Host, db.Port, db.DBName)
+		db.User, db.Password, db.Host, db.Port, db.Database)
 }
 
 type configWeb struct {
-	Listen string
+	Listen   string
 	Template configWebTemplate
 }
 
 type configWebTemplate struct {
-	FileSuffix string `toml:"file_suffix"`
-	Paths []string
+	FileSuffix string
+	Paths      []string
 }
 
 var BlogConfig configBlog
 
 func init() {
-	_, err := toml.DecodeFile("./config/blog.toml", &BlogConfig)
+	cFile, err := ioutil.ReadFile("./config/blog.yml")
+	if err != nil {
+		panic(err)
+	}
+
+	err = yaml.Unmarshal(cFile, &BlogConfig)
 	if err != nil {
 		panic(err)
 	}

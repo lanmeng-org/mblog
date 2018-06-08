@@ -11,5 +11,5 @@ db:
 web:
   listen: ":80"
   template:
-    file_suffix: ".html"
-    paths: ["template/*", "template/public/*", "template/widget/*"]
+    suffix: ".html"
+    paths: ["template/*", "template/layout/*"]

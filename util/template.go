@@ -9,7 +9,7 @@ func GetTemplateFiles() []string {
 	files := []string{}
 
 	for _, path := range BlogConfig.Web.Template.Paths {
-		f, _ := filepath.Glob(path + BlogConfig.Web.Template.FileSuffix)
+		f, _ := filepath.Glob(path + BlogConfig.Web.Template.Suffix)
 		files = append(files, f...)
 	}
 

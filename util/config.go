@@ -18,7 +18,7 @@ type configDB struct {
 	Port     int
 	User     string
 	Password string
-	Database   string
+	Database string
 }
 
 func (db *configDB) GenDsn() string {
@@ -32,14 +32,14 @@ type configWeb struct {
 }
 
 type configWebTemplate struct {
-	FileSuffix string
-	Paths      []string
+	Suffix string
+	Paths  []string
 }
 
 var BlogConfig configBlog
 
 func init() {
-	cFile, err := ioutil.ReadFile("./config/blog.yml")
+	cFile, err := ioutil.ReadFile("./config/blog.yaml")
 	if err != nil {
 		panic(err)
 	}

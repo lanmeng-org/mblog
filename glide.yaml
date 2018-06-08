@@ -1,7 +1,5 @@
 package: MBlog
 import:
-- package: github.com/BurntSushi/toml
-  version: ^0.3.0
 - package: github.com/go-sql-driver/mysql
   version: ^1.4.0
 - package: golang.org/x/crypto

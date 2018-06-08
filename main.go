@@ -3,13 +3,9 @@ package main
 import (
 	_ "github.com/go-sql-driver/mysql"
 
-	"fmt"
-	"MBlog/util"
+	"MBlog/web"
 )
 
 func main() {
-
-
-	fmt.Printf("%+v", util.BlogConfig.Web)
-
+	web.Run()
 }

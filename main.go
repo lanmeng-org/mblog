@@ -3,7 +3,7 @@ package main
 import (
 	_ "github.com/go-sql-driver/mysql"
 
-	"MBlog/web"
+	"github.com/lanmeng-org/mblog/web"
 )
 
 func main() {

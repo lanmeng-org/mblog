@@ -33,6 +33,7 @@ type configWeb struct {
 
 type configWebTemplate struct {
 	Suffix string
+	Theme  string
 	Paths  []string
 }
 

@@ -2,8 +2,8 @@ package web
 
 import (
 	"github.com/gin-gonic/gin"
-	"MBlog/util"
-	"MBlog/web/router"
+	"github.com/lanmeng-org/mblog/util"
+	"github.com/lanmeng-org/mblog/web/router"
 )
 
 var engine *gin.Engine

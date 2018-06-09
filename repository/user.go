@@ -1,8 +1,8 @@
 package repository
 
 import (
-	"MBlog/model"
-	"MBlog/util"
+	"github.com/lanmeng-org/mblog/model"
+	"github.com/lanmeng-org/mblog/util"
 
 	"errors"
 )

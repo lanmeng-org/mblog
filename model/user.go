@@ -1,7 +1,7 @@
 package model
 
 import (
-	"MBlog/util"
+	"github.com/lanmeng-org/mblog/util"
 	"errors"
 	"time"
 )

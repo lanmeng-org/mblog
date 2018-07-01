@@ -29,12 +29,17 @@ func (db *configDB) GenDsn() string {
 type configWeb struct {
 	Listen   string
 	Template configWebTemplate
+	Static configWebStatic
 }
 
 type configWebTemplate struct {
 	Suffix string
 	Theme  string
-	Paths  []string
+}
+
+type configWebStatic struct {
+	Dirs map[string]string
+	Files map[string]string
 }
 
 var BlogConfig configBlog

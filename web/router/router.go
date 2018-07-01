@@ -2,8 +2,8 @@ package router
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/lanmeng-org/mblog/web/controller"
-	"github.com/lanmeng-org/mblog/web/middleware"
+	"mblog/web/controller"
+	"mblog/web/middleware"
 )
 
 func RegisterRoute(engine *gin.Engine) {

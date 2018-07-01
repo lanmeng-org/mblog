@@ -1,21 +1,84 @@
 package repository
 
 import (
-	"github.com/lanmeng-org/mblog/model"
-	"github.com/lanmeng-org/mblog/util"
-
+	"time"
+	"mblog/model"
+	"mblog/util"
 	"errors"
 )
 
-func Login(name string, password string) (*model.User, error) {
-	user, err := model.GetUserByName(name)
+func GetUserByName(name string) (*model.User, error) {
+	db, err := util.GetMysqlConn()
 	if err != nil {
 		return nil, err
 	}
 
-	if util.CheckPwd([]byte(user.Password), []byte(password)) {
-		return user, nil
+	user := new(model.User)
+	err = db.QueryRow("SELECT id,name,password, nickname, created_at, updated_at FROM users where name=?", name).
+		Scan(&user.ID, &user.Name, &user.Password, &user.Nickname, &user.CreatedAt, &user.UpdatedAt)
+	if err != nil {
+		return nil, err
 	}
 
-	return nil, errors.New("User or password is error")
+	return user, nil
+}
+
+func CreateUser(user *model.User) error {
+	db, err := util.GetMysqlConn()
+	if err != nil {
+		return err
+	}
+
+	curTime := time.Now()
+	curTimeStr := curTime.Format("2006-01-02 15:04:05")
+
+	result, err := db.Exec("INSERT INTO users(name,password,nickname,created_at,updated_at) VALUES(?,?,?,?,?)",
+		user.Name, user.Password, user.Nickname, curTimeStr, curTimeStr)
+	if err != nil {
+		return err
+	}
+
+	i, err := result.LastInsertId()
+	if err != nil {
+		return nil
+	}
+
+	if i == 0 {
+		return errors.New("create fail")
+	}
+
+	user.ID = int(i)
+	user.CreatedAt = curTime
+	user.UpdatedAt = curTime
+
+	return nil
+}
+
+func SaveUser(user *model.User) error {
+	db, err := util.GetMysqlConn()
+	if err != nil {
+		return err
+	}
+
+	if user.ID <= 0 {
+		return CreateUser(user)
+	}
+
+	result, err := db.Exec("UPDATE users SET name=?,password=?,nickname=?,created_at=?,updated_at=? WHERE id=?",
+		user.Name, user.Password, user.Nickname, user.CreatedAt, user.UpdatedAt, user.ID)
+
+	if err != nil {
+		return err
+	}
+
+	i, err := result.RowsAffected()
+	if err != nil {
+		return nil
+	}
+
+	if i == 0 {
+		return errors.New("update fail")
+	}
+
+	return nil
 }

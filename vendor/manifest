@@ -1,0 +1,83 @@
+{
+	"version": 0,
+	"dependencies": [
+		{
+			"importpath": "github.com/gin-contrib/multitemplate",
+			"repository": "https://github.com/gin-contrib/multitemplate",
+			"revision": "41d1d62d1df32090eb009f4741d9eef6feff6967",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gin-contrib/sse",
+			"repository": "https://github.com/gin-contrib/sse",
+			"revision": "22d885f9ecc78bf4ee5d72b937e4bbcdc58e8cae",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/gin-gonic/gin",
+			"repository": "https://github.com/gin-gonic/gin",
+			"revision": "eb9f313144e6768d91421855810ed5937ce348c5",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/go-sql-driver/mysql",
+			"repository": "https://github.com/go-sql-driver/mysql",
+			"revision": "749ddf1598b47e3cd909414bda735fe790ef3d30",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/golang/protobuf/proto",
+			"repository": "https://github.com/golang/protobuf",
+			"revision": "9eb2c01ac278a5d89ce4b2be68fe4500955d8179",
+			"branch": "master",
+			"path": "/proto"
+		},
+		{
+			"importpath": "github.com/mattn/go-isatty",
+			"repository": "https://github.com/mattn/go-isatty",
+			"revision": "6ca4dbf54d38eea1a992b3c722a76a5d1c4cb25c",
+			"branch": "master"
+		},
+		{
+			"importpath": "github.com/ugorji/go/codec",
+			"repository": "https://github.com/ugorji/go",
+			"revision": "7d51bbe6161dcb8f32a1252c27668ce36e3ef16b",
+			"branch": "master",
+			"path": "/codec"
+		},
+		{
+			"importpath": "golang.org/x/crypto/bcrypt",
+			"repository": "https://github.com/golang/crypto",
+			"revision": "a49355c7e3f8fe157a85be2f77e6e269a0f89602",
+			"branch": "master",
+			"path": "/bcrypt"
+		},
+		{
+			"importpath": "golang.org/x/crypto/blowfish",
+			"repository": "https://github.com/golang/crypto",
+			"revision": "a49355c7e3f8fe157a85be2f77e6e269a0f89602",
+			"branch": "master",
+			"path": "/blowfish"
+		},
+		{
+			"importpath": "golang.org/x/sys/cpu",
+			"repository": "https://github.com/golang/sys",
+			"revision": "7138fd3d9dc8335c567ca206f4333fb75eb05d56",
+			"branch": "master",
+			"path": "/cpu"
+		},
+		{
+			"importpath": "golang.org/x/sys/unix",
+			"repository": "https://github.com/golang/sys",
+			"revision": "7138fd3d9dc8335c567ca206f4333fb75eb05d56",
+			"branch": "master",
+			"path": "/unix"
+		},
+		{
+			"importpath": "gopkg.in/yaml.v2",
+			"repository": "https://gopkg.in/yaml.v2",
+			"revision": "5420a8b6744d3b0345ab293f6fcba19c978f1183",
+			"branch": "master"
+		}
+	]
+}

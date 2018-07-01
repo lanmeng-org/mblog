@@ -1,8 +1,16 @@
 package router
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/gin-gonic/gin"
+	"mblog/util"
+)
 
 func static(engine *gin.Engine) {
-	engine.Static("/static", "./static")
-	engine.StaticFile("/favicon.ico", "./static/favicon.ico")
+	for k,v:=range util.BlogConfig.Web.Static.Dirs {
+		engine.Static(k, v)
+	}
+
+	for k,v:=range util.BlogConfig.Web.Static.Files {
+		engine.StaticFile(k, v)
+	}
 }

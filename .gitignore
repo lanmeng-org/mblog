@@ -1,7 +1,13 @@
-### Laravel ###
-/public/storage
-/vendor
-.env
+### Project ###
+/logs/*
+!/logs
+
+/config/*.yaml
+/config/*.yml
+!/config
+
+/vendor/*
+!/vendor/manifest
 
 ### Frontend ###
 node_modules/
@@ -104,8 +110,3 @@ Session.vim
 
 ### Other ###
 *.exe
-/logs/*
-!/logs
-/config/*.yaml
-/config/*.yml
-!/config

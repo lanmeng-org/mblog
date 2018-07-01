@@ -1,16 +1,20 @@
-environment: "development"  # development production
+environment: development  # [development|production]
 
 db:
-  type: "mysql"  # 支持mysql
-  host: "127.0.0.1"
+  type: mysql  # 支持mysql
+  host: 127.0.0.1
   port: 3306
-  user: "root"
-  password: "password"
-  database: "name"
+  user: root
+  password: passowrd
+  database: mblog
 
 web:
-  listen: ":8080"
+  listen: :8080
   template:
-    suffix: ".html"
-    theme: "template/default"
-    paths: ["/*", "/*/*"]
+    suffix: .html
+    theme: template/default
+  static:
+    dirs:
+      /static: ./static
+    files:
+      /favicon.ico: ./static/favicon.ico
